@@ -38,8 +38,8 @@ def load_wca_data():
 
 ### **Step 2: Web Scraping for WCA ID and Names** ###
 
-# COMPETITION_ID = "GreatPeconicBay2025"
-COMPETITION_ID = "PBsinPalisadesWinter2025"
+COMPETITION_ID = "TroyStory2023"
+# COMPETITION_ID = "PBsinPalisadesWinter2025"
 REGISTRATIONS_URL = f"https://www.worldcubeassociation.org/competitions/{COMPETITION_ID}/registrations"
 
 def get_registrations():
@@ -171,7 +171,7 @@ def main():
     final_df = sort_rows_by_333_worldRank(final_df)
 
     # Step 7: Save final output
-    final_df.to_csv("competitor_rankings.csv", index=False)
+    final_df.to_csv(f"{COMPETITION_ID} competitor_rankings.csv", index=False)
     print("Final rankings data saved to competitor_rankings.csv")
 
     # Print execution time
