@@ -9,8 +9,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 ### **Step 1: Download and Extract WCA Rankings Data (If Needed)** ###
+### data source: https://www.worldcubeassociation.org/export/results
 
-WCA_RANKINGS_URL = "https://www.worldcubeassociation.org/export/results/WCA_export_RanksSingle.tsv"
+WCA_RANKINGS_URL = "https://www.worldcubeassociation.org/export/results/WCA_export.tsv"
 WCA_FILE = "WCA_export_RanksSingle.tsv"
 ZIP_FILE = "WCA_export.zip"
 
@@ -38,8 +39,8 @@ def load_wca_data():
 
 ### **Step 2: Web Scraping for WCA ID and Names** ###
 
-COMPETITION_ID = "TroyStory2023"
-# COMPETITION_ID = "PBsinPalisadesWinter2025"
+# COMPETITION_ID = "TroyStory2023"
+COMPETITION_ID = "TippingPointBloomsburg2025"
 REGISTRATIONS_URL = f"https://www.worldcubeassociation.org/competitions/{COMPETITION_ID}/registrations"
 
 def get_registrations():
@@ -172,7 +173,7 @@ def main():
 
     # Step 7: Save final output
     final_df.to_csv(f"{COMPETITION_ID} competitor_rankings.csv", index=False)
-    print("Final rankings data saved to competitor_rankings.csv")
+    print(f"Final rankings data saved to {COMPETITION_ID} competitor_rankings.csv")
 
     # Print execution time
     end_time = time.time()
