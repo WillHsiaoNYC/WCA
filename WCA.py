@@ -9,7 +9,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 ### Step 1: Download and extract WCA rankings data (if needed) ###
-WCA_RANKINGS_URL = "https://www.worldcubeassociation.org/export/results/WCA_export_RanksSingle.tsv"
+### data source: https://www.worldcubeassociation.org/export/results
+
+WCA_RANKINGS_URL = "https://www.worldcubeassociation.org/export/results/WCA_export.tsv"
+                    
 WCA_FILE = "WCA_export_RanksSingle.tsv"
 ZIP_FILE = "WCA_export.zip"
 
